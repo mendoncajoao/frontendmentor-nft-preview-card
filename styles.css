@@ -1,0 +1,191 @@
+:root {
+  /* card size:border */
+
+  --card-height: 500px;
+  --card-width: 300px;
+
+  /* Colors */
+  --cl_primary: hsl(215, 51%, 70%);
+  --cl_primary_active: hsl(178, 100%, 50%);
+
+  --cl_secondary--main: hsl(217, 54%, 11%);
+  --cl_secondary--card: hsl(216, 50%, 16%);
+  --cl_secondary--line: hsl(215, 32%, 27%);
+  --cl_white: hsl(0, 0%, 100%);
+
+  --border-radius: 20px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  background: var(--cl_secondary--main);
+}
+
+img {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--cl_secondary--card);
+  border-radius: var(--border-radius);
+  width: var(--card-width);
+}
+
+.card-image {
+  padding: 20px;
+  height: 300px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  left: 20px;
+  right: 0;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: var(--cl_primary_active);
+  border-radius: calc(var(--border-radius) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay img {
+  width: 20%;
+  height: 20%;
+}
+
+.card-image:hover .overlay {
+  opacity: 0.5;
+}
+
+.card-image img {
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.card-info {
+  padding-inline: 20px;
+}
+
+.card-info h1 {
+  font-size: 1.2rem;
+  color: var(--cl_white);
+}
+
+.card-info h1:hover {
+  color: var(--cl_primary_active);
+  cursor: pointer;
+}
+
+.card-info p {
+  color: var(--cl_primary);
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 1em 0;
+}
+
+.card-data {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+}
+
+.eth-value {
+  display: flex;
+  align-items: center;
+  color: var(--cl_primary_active);
+  text-transform: uppercase;
+}
+
+.eth-value::before {
+  content: url(./images/icon-ethereum.svg);
+  padding-right: 0.5em;
+  height: 80%;
+}
+
+.timeleft {
+  display: flex;
+  align-items: center;
+  color: var(--cl_primary);
+}
+
+.timeleft::before {
+  content: url(./images/icon-clock.svg);
+  padding-right: 0.5em;
+  height: 80%;
+}
+
+.card-profile {
+  width: calc(var(--card-width) - 2rem);
+  border-top: 1px solid var(--cl_primary);
+  height: 4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-picture {
+  height: 2rem;
+}
+
+.profile-picture img {
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.author-name {
+  padding-inline: 1em;
+  font-size: 0.8em;
+  color: var(--cl_primary);
+}
+
+.author-name span {
+  color: var(--cl_white);
+}
+
+.author-name span:hover {
+  color: var(--cl_primary_active);
+  cursor: pointer;
+}
+
+/* ##################################################
+   #####             FOOTER  STYLING            #####
+   ################################################## */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
