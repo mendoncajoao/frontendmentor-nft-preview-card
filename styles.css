@@ -184,6 +184,7 @@ img {
   bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
+  color: var(--cl_white);
 }
 
 .attribution a {
